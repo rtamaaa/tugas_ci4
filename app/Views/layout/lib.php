@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="<?= base_url('AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
 <link rel="stylesheet" href="<?= base_url('AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
 
-<script src="<?= base_url('/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+<script src="<?= base_url('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 <!-- AdminLTE App -->
-<script src="<?= base_url('/adminLTE/dist/js/adminlte.min.js')?>"></script>
+<script src="<?= base_url('adminLTE/dist/js/adminlte.min.js')?>"></script>
 <!-- jQuery -->
 <script src="<?= base_url('AdminLTE/plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Datatables -->

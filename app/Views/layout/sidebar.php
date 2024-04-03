@@ -14,7 +14,7 @@
           <img src="<?=base_url('adminlte/dist/img/user2-160x160.jpg')?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -45,10 +45,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mahasiswa</p>
-                </a>
+                  <a href="<?= base_url('dosen') ?>" class="nav-link <?= strpos(current_url(), 'dosen') !== false ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p><?= $title ?></p>
+                  </a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url('Prodi')?>" class="nav-link">

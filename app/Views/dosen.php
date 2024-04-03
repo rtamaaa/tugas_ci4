@@ -29,8 +29,9 @@
                                 <td><?php echo $dosen['nama_dosen'] ?></td>
                                 <td><?php echo $dosen['status_dosen'] ?></td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-sm btn-primary edit-dosen" data-id="<?= $dosen['id_dosen']; ?>" data-kode="<?= $dosen['kode_dosen']; ?>" data-nama="<?= $dosen['nama_dosen']; ?>" data-status="<?= $dosen['status_dosen']; ?>">Edit</button>
-                                    <a href="/dosen/delete/<?= $dosen['id_dosen'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus data ini ?')">Delete</a>
+                                <a href="/dosen/update/<?= $dosen['id_dosen'];?>" class="btn btn-sm btn-primary updateData" 
+                                    id="updateData">Edit</a>
+                                   <a href="/dosen/delete/<?= $dosen['id_dosen'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau hapus data ini ?')">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
@@ -43,6 +44,8 @@
     </div>
     <!-- /.content -->
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- /.content-wrapper -->
 
 <!-- Modal -->
@@ -57,7 +60,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form for adding data -->
-                <form action="/dosen/tambah" method="post">
+                <form action="" method="post">
                     <div class="form-group">
                         <label for="kode_dosen">Kode Dosen</label>
                         <input type="text" class="form-control" id="kode_dosen" name="kode_dosen">
@@ -95,6 +98,7 @@
     $(document).ready(function(){
         // Menangkap klik tombol tambah data
         $("#tambahData").click(function(){
+            console.log("Tombol Edit Ditekan");
             // Mengosongkan nilai input di modal
             $("#addDataModal #id_dosen").val('');
             $("#addDataModal #kode_dosen").val('');
@@ -116,11 +120,11 @@
     });
 </script>
 
-<!-- script update  -->
+<!-- script update 
 <script>
     $(document).ready(function(){
         // Menangkap klik tombol edit
-        $(".edit-dosen").click(function(){
+        $("#updateData").click(function(){
             // Mengambil data dosen dari atribut data
             var idDosen = $(this).data('id');
             var kodeDosen = $(this).data('kode');
@@ -147,7 +151,7 @@
             $("#addDataModal").modal("show");
         });
     });
-</script>
+</script> -->
 
 </body>
 </html>

@@ -14,9 +14,9 @@ class Dosen extends BaseController
             'DataDosen' => $DataDosen->findAll(),
             
         );
-        $header['title']='Data Dosen';
-        echo view('layout/header', $header);
-        echo view('layout/sidebar');
+        $judul['title']='Data Dosen';
+        echo view('layout/header', $judul);
+        echo view('layout/sidebar', $judul);
         echo view('dosen', $data);
         echo view('layout/footer');
 
@@ -42,6 +42,15 @@ class Dosen extends BaseController
         if (!$kode_dosen || !$nama_dosen || !$status_dosen) {
             return redirect()->back()->withInput()->with('error', 'All fields are required');
         }
+
+        $token = getenv('TELEGRAM_BOT_TOKEN');
+ 
+		$datas = [
+		'text' =>"data berhasil ditambahkan dengan nama dosen $nama_dosen ",
+		'chat_id' => getenv('TELEGRAM_CHAT_ID')  //contoh bot, group id -1002104421632
+		];
+       
+		file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($datas));
 
         // Insert the data
         $dosenModel->insert($data);
